@@ -1,6 +1,6 @@
 # Deploy to Firebase
 
-A GitHub Action to deploy to Firebase Hosting.
+A GitHub Action to deploy to Firebase Cloud Functions.
 
 - Make sure that you checkout the repository using the [actions/checkout](https://github.com/actions/checkout) action
 - Make sure that you have the `firebase.json` file in the repository
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: lowply/deploy-firebase@v0.0.5
+    - uses: jsryudev/deploy-firebase-functions@v0.0.1
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         FIREBASE_PROJECT: name-of-the-project
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: lowply/deploy-firebase@v0.0.5
+    - uses: jsryudev/deploy-firebase-functions@v0.0.1
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         FIREBASE_PROJECT: name-of-the-project

@@ -1,6 +1,6 @@
-# Deploy to Firebase Functions for Node14
+# Deploy to Firebase Functions for Node18
 
-A GitHub Action to deploy to Firebase Cloud Functions for Node14.
+A GitHub Action to deploy to Firebase Cloud Functions for Node18.
 
 - Make sure that you checkout the repository using the [actions/checkout](https://github.com/actions/checkout) action
 - Make sure that you have the `firebase.json` file in the repository
@@ -11,7 +11,7 @@ A GitHub Action to deploy to Firebase Cloud Functions for Node14.
 
 Deploy the `main` branch when a commit is pushed to it:
 
-```
+```yml
 name: Deploy the main branch
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: jsryudev/deploy-firebase-functions@v0.0.2
+    - uses: jsryudev/deploy-firebase-functions@v18.0.0
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         FIREBASE_PROJECT: firebase-project-id
@@ -31,7 +31,7 @@ jobs:
 
 Deploy only when a tag starts with `v` is pushed:
 
-```
+```yml
 name: Deploy a tag
 on:
   push:
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: jsryudev/deploy-firebase-functions@v0.0.2
+    - uses: jsryudev/deploy-firebase-functions@v18.0.0
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         FIREBASE_PROJECT: firebase-project-id

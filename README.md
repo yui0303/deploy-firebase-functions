@@ -9,6 +9,48 @@ A GitHub Action to deploy to Firebase Cloud Functions for Node.
 
 ## Workflow examples
 
+### Node 20
+
+Deploy the `main` branch when a commit is pushed to it:
+
+```yml
+name: Deploy the main branch
+on:
+  push:
+    branches:
+      - main
+jobs:
+  main:
+    name: Deploy to Firebase
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: jsryudev/deploy-firebase-functions@v20.0.0
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        FIREBASE_PROJECT: firebase-project-id
+```
+
+Deploy only when a tag starts with `v` is pushed:
+
+```yml
+name: Deploy a tag
+on:
+  push:
+    tags:
+      - v*
+jobs:
+  main:
+    name: Deploy to Firebase
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: jsryudev/deploy-firebase-functions@v20.0.0
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        FIREBASE_PROJECT: firebase-project-id
+```
+
 ### Node 18
 
 Deploy the `main` branch when a commit is pushed to it:

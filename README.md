@@ -1,6 +1,6 @@
-# Deploy to Firebase Functions for Node14
+# Deploy to Firebase Functions for Node
 
-A GitHub Action to deploy to Firebase Cloud Functions for Node14.
+A GitHub Action to deploy to Firebase Cloud Functions for Node.
 
 - Make sure that you checkout the repository using the [actions/checkout](https://github.com/actions/checkout) action
 - Make sure that you have the `firebase.json` file in the repository
@@ -55,7 +55,7 @@ jobs:
 
 Deploy the `main` branch when a commit is pushed to it:
 
-```
+```yml
 name: Deploy the main branch
 on:
   push:
@@ -75,7 +75,7 @@ jobs:
 
 Deploy only when a tag starts with `v` is pushed:
 
-```
+```yml
 name: Deploy a tag
 on:
   push:

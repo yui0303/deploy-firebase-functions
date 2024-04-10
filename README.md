@@ -9,7 +9,7 @@ A GitHub Action to deploy to Firebase Cloud Functions for Node.
 
 ## Workflow examples
 
-### Node 20
+### Node 20 ([Preview](https://firebase.google.com/docs/functions/manage-functions?gen=1st#set_nodejs_version_2))
 
 Deploy the `main` branch when a commit is pushed to it:
 

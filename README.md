@@ -23,10 +23,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: jsryudev/deploy-firebase-functions@v18.0.0
+    - uses: jsryudev/deploy-firebase-functions@v18.0.1
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         FIREBASE_PROJECT: firebase-project-id
+        FUNCTIONS_DIR: firebase-functions-directory
 ```
 
 Deploy only when a tag starts with `v` is pushed:
@@ -43,8 +44,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: jsryudev/deploy-firebase-functions@v18.0.0
+    - uses: jsryudev/deploy-firebase-functions@v18.0.1
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         FIREBASE_PROJECT: firebase-project-id
+        FUNCTIONS_DIR: firebase-functions-directory
 ```
+
+## Env
+
+| Name | Description | Default | Required |
+| - | - | - | - |
+| `FIREBASE_TOKEN` | Token to use to authorize firebase cli | N/A | Y |
+| `FIREBASE_PROJECT` | Specify the Firebase project name | 2 | Y |
+| `FUNCTIONS_DIR` |  | Specify the Firebase functions directory | N |

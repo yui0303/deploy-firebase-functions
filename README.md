@@ -191,4 +191,4 @@ jobs:
 | - | - | - | - |
 | `FIREBASE_TOKEN` | Token to use to authorize firebase cli | N/A | Y |
 | `FIREBASE_PROJECT` | Specify the Firebase project name | 2 | Y |
-| `FUNCTIONS_DIR` |  | Specify the Firebase functions directory | N |
+| `FUNCTIONS_DIR` | Specify the Firebase functions directory | functions | N |

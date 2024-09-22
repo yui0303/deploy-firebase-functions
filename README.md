@@ -23,11 +23,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: jsryudev/deploy-firebase-functions@v20.0.1
+    - uses: jsryudev/deploy-firebase-functions@v20.0.2
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         FIREBASE_PROJECT: firebase-project-id
         FUNCTIONS_DIR: firebase-functions-directory
+        FUNCTIONS_NAME: function_1,function2,...
 ```
 
 Deploy only when a tag starts with `v` is pushed:

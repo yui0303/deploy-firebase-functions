@@ -14,6 +14,17 @@ if [ -z "${FIREBASE_PROJECT}" ]; then
     exit 1
 fi
 
+if [ -n "${FUNCTIONS_NAME}" ]; then
+    IFS=',' read -ra FUNCTIONS <<< "${FUNCTIONS_NAME}"
+    FORMATTED_FUNCTIONS=$(printf ",functions:%s" "${FUNCTIONS[@]}")
+    FORMATTED_FUNCTIONS=${FORMATTED_FUNCTIONS:1} # Remove leading comma
+    firebase deploy \
+        -m "${GITHUB_REF} (${GITHUB_SHA})" \
+        --project ${FIREBASE_PROJECT} \
+        --only ${FORMATTED_FUNCTIONS} \
+    exit 0 
+fi
+
 firebase deploy \
     -m "${GITHUB_REF} (${GITHUB_SHA})" \
     --project ${FIREBASE_PROJECT} \
